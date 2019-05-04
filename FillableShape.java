@@ -1,6 +1,6 @@
 import java.awt.Color;
 
-public abstract class FillableShape extends Shape {
+abstract class FillableShape extends Shape {
     protected boolean filled;
 
     public FillableShape() {
