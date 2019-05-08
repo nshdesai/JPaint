@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Graphics;
 
 abstract class FillableShape extends Shape {
     protected boolean filled;
@@ -67,4 +68,6 @@ abstract class FillableShape extends Shape {
     public int getUpperLeftY(){
         return Math.min(y1, y2);
     }
+
+    public abstract void draw(Graphics g);
 }
