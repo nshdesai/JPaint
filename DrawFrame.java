@@ -84,9 +84,9 @@ public class DrawFrame extends JFrame {
         filledCheckBox.setEnabled(false);
         filledCheckBox.addItemListener(choiceListener);
         // Configure drop downs
-        colorDropDown.setMaximumRowCount(colorValues.length); // Makes code more readable ?
+        colorDropDown.setMaximumRowCount(3); // Makes code more readable ?
         colorDropDown.addItemListener(choiceListener);
-        shapeDropDown.setMaximumRowCount(shapeTypes.length);
+        shapeDropDown.setMaximumRowCount(3);
         shapeDropDown.addItemListener(choiceListener);
     }
 

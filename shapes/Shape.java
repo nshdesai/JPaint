@@ -77,7 +77,8 @@ public abstract class Shape {
      */
     public int checkLessThanZero(int coord){
         if (coord < 0){
-            System.err.println("Attempting to set a coordinate to a value less that zero (0). Setting value to 0");
+            //Only required while debugging
+            //System.err.println("Attempting to set a coordinate to a value less that zero (0). Setting value to 0");
             return 0;
         }
         else {

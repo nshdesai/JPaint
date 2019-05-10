@@ -38,8 +38,9 @@ public class Rectangle extends FillableShape {
     @Override
     public void draw(Graphics g) {
         g.setColor(getColor());
-        g.drawRect(getUpperLeftX(), getUpperLeftY(), getWidth(), getHeight());
         if (getFilled())
            g.fillRect(getUpperLeftX(), getUpperLeftY(), getWidth(), getHeight());
+        else
+           g.drawRect(getUpperLeftX(), getUpperLeftY(), getWidth(), getHeight());
     }
 }

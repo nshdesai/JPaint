@@ -38,9 +38,10 @@ import java.awt.Graphics;
       */
      @Override
      public void draw(Graphics g) {
-         g.setColor(getColor());
-         g.drawOval(getUpperLeftX(), getUpperLeftY(), getWidth(), getHeight());
-         if (getFilled())
+        g.setColor(getColor());
+        if (getFilled())
             g.fillOval(getUpperLeftX(), getUpperLeftY(), getWidth(), getHeight());
+        else
+            g.drawOval(getUpperLeftX(), getUpperLeftY(), getWidth(), getHeight());
      }
  }

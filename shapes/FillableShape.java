@@ -29,7 +29,7 @@ abstract class FillableShape extends Shape {
      * @param filled whether the shape is to be filled
      */
     public FillableShape(int x1, int y1, int x2, int y2, Color color, boolean filled){
-        super(x1, x2, y1, y2, color);
+        super(x1, y1, x2, y2, color);
         setFilled(filled);
     }
 

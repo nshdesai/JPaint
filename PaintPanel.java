@@ -84,7 +84,7 @@ public class PaintPanel extends JPanel {
                 currentShape = new Rectangle(x1, y1, x2, y2, currentColor, filled);
                 break;
             case OVAL:
-                currentShape = new Rectangle(x1, y1, x2, y2, currentColor, filled);
+                currentShape = new Oval(x1, y1, x2, y2, currentColor, filled);
                 break;
         }
     }
@@ -163,11 +163,9 @@ public class PaintPanel extends JPanel {
          */
         @Override
         public void mousePressed(MouseEvent event) {
-            if (event.getButton() == event.BUTTON1) {
-                buildShape(event.getX(), event.getY(), event.getX(), event.getY());
-                shapes.addFirst(currentShape);
-                repaint();
-            }
+            buildShape(event.getX(), event.getY(), event.getX(), event.getY());
+            shapes.addFirst(currentShape);
+            repaint();
         }
 
         /**
@@ -178,7 +176,6 @@ public class PaintPanel extends JPanel {
         public void mouseDragged(MouseEvent event) {
             currentShape.setX2(event.getX());
             currentShape.setY2(event.getY());
-
             statusBar.setText(String.format("Mouse position: (%d, %d)\n", event.getX(), event.getY()));
             repaint();
         }
@@ -194,9 +191,10 @@ public class PaintPanel extends JPanel {
 
             undoStack.clear(); // You cannot redo after a new action has been done
 
-            // if (event.isAltDown() || event.isMetaDown()) {
-            //     shapes.removeFirst();
-            // }
+            if (event.isAltDown() || event.isMetaDown()) {
+                shapes.removeFirst();
+            }
+
             repaint();
         }
 

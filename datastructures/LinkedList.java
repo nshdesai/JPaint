@@ -140,16 +140,24 @@ public class LinkedList<T> implements LinkedListADT<T> {
     @Override
     @SuppressWarnings("unchecked")
     public T removeLast() {
-        ListNode<T> temp = front;
-        ListNode<T> prev = temp;
+        T tempData;
+        ListNode<T> last = front;
+        ListNode<T> temp = null;
 
-        while (temp != null) {
-            prev = temp;
-            temp = temp.getNext();
+        if (isEmpty())
+            return null;
+        else if (size() == 1)
+            return removeFirst();
+
+        for (int i = 0; i < size() - 2; i++) {
+            last = last.getNext();
         }
-        prev.setNext(null);
+
+        temp = last.getNext();
+        tempData = temp.getData();
+        last.setNext(null);
         numberOfNodes--;
 
-        return temp.getData();
+        return tempData;
     }
 }
