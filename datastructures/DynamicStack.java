@@ -1,4 +1,6 @@
-class DynamicStack<T> implements StackADT<T> {
+package datastructures;
+
+public class DynamicStack<T> implements StackADT<T> {
     private LinkedList<T> myList;
 
     // Creates an empty stack (based on a linked list).
@@ -40,4 +42,4 @@ class DynamicStack<T> implements StackADT<T> {
     public String toString() {
         return myList.toString();
     }
-}  
+}

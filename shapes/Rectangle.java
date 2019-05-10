@@ -1,3 +1,5 @@
+package shapes;
+
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -7,7 +9,6 @@ import java.awt.Graphics;
  *@author ndesai
  *@version 18 November 2018
  */
-
 public class Rectangle extends FillableShape {
 
     public Rectangle(){
@@ -20,9 +21,9 @@ public class Rectangle extends FillableShape {
 
     @Override
     public void draw(Graphics g) {
-        g.setColor(color);
+        g.setColor(getColor());
         g.drawRect(getUpperLeftX(), getUpperLeftY(), getWidth(), getHeight());
-        if (filled)
+        if (getFilled())
            g.fillRect(getUpperLeftX(), getUpperLeftY(), getWidth(), getHeight());
     }
 }

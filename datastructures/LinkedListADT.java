@@ -1,3 +1,5 @@
+package datastructures;
+
 public interface LinkedListADT<T> {
 
     // Returns true if the linked list has no nodes, or false otherwise.
@@ -21,6 +23,9 @@ public interface LinkedListADT<T> {
     // Removes a node from the front of the linked list (if there is one).
     // Returns a reference to the data in the first node, or null if the list is empty.
     public T removeFirst();
+
+    // Returns a reference to the last node in the list and removes it
+    public T removeLast();
 
     // Returns true if the linked list contains a certain element, or false otherwise.
     public boolean contains( T key );

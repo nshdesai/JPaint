@@ -1,3 +1,5 @@
+package shapes;
+
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -7,7 +9,6 @@ import java.awt.Graphics;
  *
  * Oval class for a paint program
  */
-
  public class Oval extends FillableShape {
 
      public Oval(){
@@ -20,9 +21,9 @@ import java.awt.Graphics;
 
      @Override
      public void draw(Graphics g) {
-         g.setColor(color);
+         g.setColor(getColor());
          g.drawOval(getUpperLeftX(), getUpperLeftY(), getWidth(), getHeight());
-         if (filled)
+         if (getFilled())
             g.fillOval(getUpperLeftX(), getUpperLeftY(), getWidth(), getHeight());
      }
  }

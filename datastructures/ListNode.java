@@ -1,3 +1,5 @@
+package datastructures;
+
 public class ListNode<T> {
     private T data;
     private ListNode next;

@@ -1,30 +1,55 @@
-class LinkedList<T> implements LinkedListADT<T> {
+package datastructures;
+
+/**
+ * A linked list class that implements all the standard methods
+ * for a single-linked list.
+ */
+public class LinkedList<T> implements LinkedListADT<T> {
     private ListNode<T> front = null;
     private int numberOfNodes = 0;
-    // Returns true if the linked list has no nodes, or false otherwise.
+
+    /**
+     * Returns true if the linked list has no nodes, or false otherwise.
+     * @return boolean isEmpty?
+     */
     @Override
     public boolean isEmpty() {
         return (front == null);
     }
-    // Deletes all of the nodes in the linked list.
-    // Note: ListNode objects will be automatically garbage collected by JVM.
+
+    /**
+     * Deletes all of the nodes in the linked list.
+     * Note: ListNode objects will be automatically garbage collected by JVM.
+     */
     @Override
     public void clear() {
         front = null;
         numberOfNodes = 0;
     }
-    // Returns the number of nodes in the linked list
+
+    /**
+     * Returns the number of nodes in the linked list
+     * @return int number of nodes in list
+     */
     @Override
     public int size() {
         return numberOfNodes;
     }
-    // Adds a node to the front of the linked list.
+
+    /**
+     * Adds a node to the front of the linked list.
+     * @param element generic type element to add
+     */
     @Override
     public void addFirst( T element ) {
         front = new ListNode<T>( element, front );
         numberOfNodes++;
     }
-    // Returns a reference to the data in the first node, or null if the list is empty.
+
+    /**
+     * Returns a reference to the data in the first node, or null if the list is empty.
+     * @return generic type element
+     */
     @Override
     public T peekFirst() {
         if ( isEmpty() )
@@ -32,8 +57,11 @@ class LinkedList<T> implements LinkedListADT<T> {
 
         return front.getData();
     }
-    // Removes a node from the front of the linked list (if there is one).
-    // Returns a reference to the data in the first node, or null if the list is empty.
+
+    /**
+     * Removes a node from the front of the linked list (if there is one).
+     * Returns a reference to the data in the first node, or null if the list is empty.
+     */
     @Override
     @SuppressWarnings("unchecked")
     public T removeFirst() {
@@ -47,7 +75,11 @@ class LinkedList<T> implements LinkedListADT<T> {
         numberOfNodes--;
         return tempData;
     }
-    // Returns true if the linked list contains a certain element, or false otherwise.
+
+    /**
+     * Returns true if the linked list contains a certain element, or false otherwise.
+     * @param key generic type key to be matched
+     */
     @Override
     @SuppressWarnings("unchecked")
     public boolean contains( T key ) {
@@ -58,7 +90,10 @@ class LinkedList<T> implements LinkedListADT<T> {
         }
         return ( searchNode != null );
     }
-    // Return String representation of the linked list.
+
+    /**
+    * Return String representation of the linked list.
+    */
     @Override
     @SuppressWarnings("unchecked")
     public String toString() {
@@ -73,7 +108,11 @@ class LinkedList<T> implements LinkedListADT<T> {
 
         return linkedList + "NULL";
     }
-    // Add an element to the end of the linked list
+
+    /**
+    * Add an element to the end of the linked list
+    * @param element generic type element that is to be added
+    */
     @Override
     @SuppressWarnings("unchecked")
     public void addLast( T element ) {
@@ -89,7 +128,25 @@ class LinkedList<T> implements LinkedListADT<T> {
         else {
             addFirst(element);
         }
+    }
 
+    /**
+     * Returns a reference to the last element in the list and removes it
+     * @return reference to last element in list
+     */
+    @Override
+    @SuppressWarnings("unchecked")
+    public T removeLast() {
+        ListNode<T> temp = front;
+        ListNode<T> prev = temp;
 
+        while (temp != null) {
+            prev = temp;
+            temp = temp.getNext();
+        }
+        prev.setNext(null);
+        numberOfNodes--;
+
+        return temp.getData();
     }
 }

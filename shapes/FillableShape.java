@@ -1,13 +1,33 @@
+package shapes;
+
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * Abstract class that provides a template for all fillable shapes
+ *
+ * @@author ndesai
+ * @@version 10th May 2019
+ */
 abstract class FillableShape extends Shape {
-    protected boolean filled;
+    private boolean filled;
 
+    /**
+     * Defualt constructor for any fillable shape object
+     */
     public FillableShape() {
         this(0, 0, 0, 0, Color.WHITE, false);
     }
 
+    /**
+     * Parameterized constructor for any fillable shape
+     * @param x1     first x coordinate
+     * @param x2     second x coordinate
+     * @param y1     first y coordinate
+     * @param y2     second y coordinate
+     * @param color  color of shape
+     * @param filled whether the shape is to be filled
+     */
     public FillableShape(int x1, int x2, int y1, int y2, Color color, boolean filled){
         super(x1, x2, y1, y2, color);
         setFilled(filled);
@@ -34,7 +54,7 @@ abstract class FillableShape extends Shape {
      * @return String
      */
     public String toString(){
-        return String.format("The shape with coordinates (%d, %d, %d, %d) is %s filled", x1, y1, x2, y2, filled ? "" : "not");
+        return String.format("The shape with coordinates (%d, %d, %d, %d) is %s filled", getX1(), getY1(), getX2(), getY2(), getFilled() ? "" : "not");
     }
 
     /**
@@ -42,7 +62,7 @@ abstract class FillableShape extends Shape {
      * @return positive integer value (abs) of the width
      */
     public int getWidth(){
-        return Math.abs(x2-x1);
+        return Math.abs(getX2()-getX1());
     }
 
     /**
@@ -50,7 +70,7 @@ abstract class FillableShape extends Shape {
      * @return postive integer value (abs) of the height
      */
     public int getHeight(){
-        return Math.abs(y2-y1);
+        return Math.abs(getY2()-getY1());
     }
 
     /**
@@ -58,7 +78,7 @@ abstract class FillableShape extends Shape {
      * @return int x-coord which is smaller
      */
     public int getUpperLeftX(){
-        return Math.min(x1, x2);
+        return Math.min(getX1(), getX2());
     }
 
     /**
@@ -66,8 +86,13 @@ abstract class FillableShape extends Shape {
      * @return int y-coord of the upper left corner of a oval
      */
     public int getUpperLeftY(){
-        return Math.min(y1, y2);
+        return Math.min(getY1(), getY2());
     }
 
+    /**
+     * Method to draw the shape (for swing applications)
+     * @param g Graphics object (from java.awt)
+     * @@see java.awt.Graphics
+     */
     public abstract void draw(Graphics g);
 }
