@@ -19,8 +19,8 @@ public abstract class Shape {
     /**
      * Parameterized constructor for any shape
      * @param x1     first x coordinate of shape
-     * @param x2     second x coordinate of shape
      * @param y1     first y coordinate of shape
+     * @param x2     second x coordinate of shape
      * @param y2     second y coordinate of shape
      * @param color  color of shape
      */

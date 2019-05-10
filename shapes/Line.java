@@ -14,8 +14,8 @@ public class Line extends Shape {
     /**
      * Parameterized constructor for a line
      * @param x1     first x coordinate
-     * @param x2     second x coordinate
      * @param y1     first y coordinate
+     * @param x2     second x coordinate
      * @param y2     second y coordinate
      * @param color  color of line/stroke
      */

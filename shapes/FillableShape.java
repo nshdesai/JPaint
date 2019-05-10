@@ -22,13 +22,13 @@ abstract class FillableShape extends Shape {
     /**
      * Parameterized constructor for any fillable shape
      * @param x1     first x coordinate
-     * @param x2     second x coordinate
      * @param y1     first y coordinate
+     * @param x2     second x coordinate
      * @param y2     second y coordinate
      * @param color  color of shape
      * @param filled whether the shape is to be filled
      */
-    public FillableShape(int x1, int x2, int y1, int y2, Color color, boolean filled){
+    public FillableShape(int x1, int y1, int x2, int y2, Color color, boolean filled){
         super(x1, x2, y1, y2, color);
         setFilled(filled);
     }

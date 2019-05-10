@@ -21,8 +21,8 @@ import java.awt.Graphics;
      /**
       * Parameterized constructor for an ellipse
       * @param x1     first x coordinate
-      * @param x2     second x coordinate
       * @param y1     first y coordinate
+      * @param x2     second x coordinate
       * @param y2     second y coordinate
       * @param color  color of oval
       * @param filled is the oval filled?
