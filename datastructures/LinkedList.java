@@ -2,7 +2,10 @@ package datastructures;
 
 /**
  * A linked list class that implements all the standard methods
- * for a single-linked list.
+ * for a single-linked list (from the LinkedListADT).
+ *
+ * @@author ndesai
+ * @@version 10th May 2019
  */
 public class LinkedList<T> implements LinkedListADT<T> {
     private ListNode<T> front = null;
