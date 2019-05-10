@@ -159,6 +159,7 @@ public class DrawFrame extends JFrame {
                 paintPanel.setShape(shapeDropDown.getSelectedIndex()); // change shape
 
                 if (paintPanel.getShape() == paintPanel.LINE) {
+                    filledCheckBox.setSelected(false);
                     filledCheckBox.setEnabled(false); // Don't enable check box while drawing a line
                 }
                 else {

@@ -179,7 +179,7 @@ public class PaintPanel extends JPanel {
             currentShape.setX2(event.getX());
             currentShape.setY2(event.getY());
 
-            // statusBar.setText(String.format("Mouse position: (%d, %d)\n", event.getX(), event.getY()));
+            statusBar.setText(String.format("Mouse position: (%d, %d)\n", event.getX(), event.getY()));
             repaint();
         }
 
