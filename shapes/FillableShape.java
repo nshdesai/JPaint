@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * Abstract class that provides a template for all fillable shapes
+ * Abstract class that provides a template for all fillable shapes (Rects/Ovals)
  *
  * @@author ndesai
  * @@version 10th May 2019

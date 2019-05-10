@@ -3,6 +3,12 @@ package shapes;
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * Abstract class that provides a template for all shapes (Lines/Rects/Ovals)
+ *
+ * @@author ndesai
+ * @@version 10th May 2019
+ */
 public abstract class Shape {
     private int x1;
     private int x2;
@@ -10,6 +16,14 @@ public abstract class Shape {
     private int y2;
     private Color color;
 
+    /**
+     * Parameterized constructor for any shape
+     * @param x1     first x coordinate of shape
+     * @param x2     second x coordinate of shape
+     * @param y1     first y coordinate of shape
+     * @param y2     second y coordinate of shape
+     * @param color  color of shape
+     */
     public Shape(int x1, int y1, int x2, int y2, Color color) {
         setX1(x1);
         setY1(y1);
@@ -111,5 +125,10 @@ public abstract class Shape {
         return color;
     }
 
+    /**
+     * Method to draw a shape (called by paintComponent)
+     * @param g Graphics object (from java.awt)
+     * @see java.awt.Graphics
+     */
     public abstract void draw(Graphics g);
 }
